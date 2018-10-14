@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+    mongo-service:
+        build: ./mongo_service
+        ports:
+            - 27017:27017
+
+    flask-service:
+        build: ./flask_service
+        ports:
+            - 8000:8000
+        depends_on:
+            - mongo-service
