@@ -4,7 +4,8 @@ services:
     mongo-service:
         build: ./mongo_service
         ports:
-            - 27017:27017
+            - 27017:27017 # We don't need this to be exposed for flask-service to see
+                          # This is just so we can take a look inside of mongodb
 
     flask-service:
         build: ./flask_service
